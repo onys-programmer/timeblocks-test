@@ -1,17 +1,8 @@
-import './App.css';
+import Calendar from './Calendar.jsx';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <span>
-          8
-        </span>
-        <span>
-          2022
-        </span>
-      </header>
-    </div>
+    <Calendar />
   );
 }
 
