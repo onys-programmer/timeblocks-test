@@ -1,11 +1,12 @@
-import './Calendar.css';
+import './Calendar.scss';
 import { month, year } from './now';
 
 function Calendar() {
   return (
     <div className="Calendar">
       <header className="Calendar-header">
-        <span>{month}</span><span>{year}</span>
+        <span className="month">{month}</span>
+        <span className="year">{year}</span>
       </header>
     </div>
   );

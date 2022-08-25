@@ -6,11 +6,19 @@
   background-color: #FAFAFA;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #1F1F1F;
+
+  .month {
+    margin: 1vh;
+    font-size: calc(10px + 4vmin);
+  }
+
+  .year {
+    margin: 1vh;
+  }
 }
 
 .Calendar-link {
