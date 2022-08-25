@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# TimeBlocks React Client Coding Test
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 개요
 
-## Available Scripts
+일정을 입력하고 표시할 수 있는 간단한 월간 캘린더 앱을 구현합니다.
 
-In the project directory, you can run:
+아래 주의사항 및 예제화면을 참고하여 자유로운 방식으로 구현해주시면 됩니다.
 
-### `npm start`
+### 주의사항
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 필수기능은 모두 구현해주셔야 합니다.
+- 권장사항은 구현하지 않아도 되지만 여건에 맞게 최대한 구현해주시면 좋습니다.
+- 캘린더 날짜 계산은 표준내장객체인 Date를 사용하셔야 합니다.
+- 캘린더 기능 관련 외부 라이브러리 사용을 금지합니다.  (React 는 사용하셔도 됩니다)
+- 일정 데이터는 DB를 활용하지 않고 휘발성으로 저장해도 무방합니다.
+- 텍스트 및 버튼 크기 등 디자인적인 요소는 채점하지 않습니다.
+- 주석은 채점에 포함되지 않습니다.
+- 코드의 로직과 전체적인 뷰 구조만 채점요소에 포함됩니다.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 참고 화면
 
-### `npm test`
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9061a573-91db-4522-9bbb-a09ff9797649/_2021-05-06__3.09.06.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9061a573-91db-4522-9bbb-a09ff9797649/_2021-05-06__3.09.06.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a17f2402-e9bc-43ba-acd3-92e3e6e11f32/_2021-05-06__3.09.59.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a17f2402-e9bc-43ba-acd3-92e3e6e11f32/_2021-05-06__3.09.59.png)
 
-### `npm run build`
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/487ac1d4-6a5f-4f44-87c4-5b5b564487c4/_2021-05-06__3.07.11.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/487ac1d4-6a5f-4f44-87c4-5b5b564487c4/_2021-05-06__3.07.11.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 필수기능
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- 캘린더 최상단에는 연도 및 월을 표시합니다.
+- 캘린더에는 현재 선택된 달의 날짜를 7 x n(week) 형태의 격자로 표시합니다.
+- 특정 날짜를 탭하면 다이얼로그가 표시됩니다.
+- 다이얼로그에는 선택된 날짜, 제목용 input, 완료버튼이 포함됩니다.
+- 다이얼로그에서 입력을 완료하면 캘린더에 해당일정을 표시합니다.
+- 일정은 해당 날짜영역 날짜텍스트 아래에 한줄로 표시합니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 권장사항
 
-### `npm run eject`
+- 캘린더 상단에 요일을 일월화수목금토 순서로 표시해봅니다.
+- 주말날짜를 빨간색으로 표시해봅니다.
+- 주(week)를 구분하는 선을 표시해봅니다.
+- 캘린더에 현재 선택된 월의 날짜만 표시. 또는 이전, 다음달의 날짜를 흐리게 표시해봅니다.
+- 일정에 컬러값을 추가하여 해당 컬러로 일정을 표시해봅니다. (컬러를 선택하기 위한 Picker는 구현하지 않고 임의의 랜덤값을 사용해도 됩니다.)
+- 한 날짜에 2개 이상의 일정데이터를 겹치지 않게 표시해봅니다.
+- 일정 데이터에 시작, 종료값을 추가하여 2일 이상의 긴 일정을 표시해봅니다. (시작, 종료를 선택하기 위한 날짜 Picker는 구현하지 않고 임의의 랜덤값을 사용해도 됩니다.)
+- 캘린더 최상단에 이전, 다음달로 이동할 수 있는 버튼을 구현해봅니다.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 기간
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2일
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 언어
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+javascript or typescript
 
-## Learn More
+### 제출방법
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+프로젝트 소스코드 전체를 압축하여 아래 이메일로 보내주시거나 또는 git repository를 생성하여 링크를 공유해주시면 됩니다.
