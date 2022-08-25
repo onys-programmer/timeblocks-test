@@ -1,6 +1,6 @@
 import isLeapYear from "./isLeapYear";
 
-const generateDatesOfMonth = (nowDate = new Date()) => {
+const generateDateObjsOfMonth = (nowDate = new Date()) => {
   const month = nowDate.getMonth();
 
   const year = nowDate.getFullYear();
@@ -18,12 +18,12 @@ const generateDatesOfMonth = (nowDate = new Date()) => {
   return datesOfMonth;
 }
 
-const generateDateNumsOfYear = (year = new Date().getFullYear()) => {
+const generateDatesNumsOfYear = (year = new Date().getFullYear()) => {
   const februaryDatesNum = isLeapYear(year) ? 29 : 28;
   return [31, februaryDatesNum, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 }
 
 export {
-  generateDatesOfMonth,
-  generateDateNumsOfYear,
+  generateDateObjsOfMonth,
+  generateDatesNumsOfYear,
 };

@@ -1,4 +1,4 @@
-import { generateDatesOfMonth } from "./generators";
+import { generateDateObjsOfMonth } from "./generators";
 
 const nowDate = new Date();
 
@@ -8,12 +8,12 @@ const month = nowDate.getMonth() + 1;
 
 const year = nowDate.getFullYear();
 
-const datesOfMonth = generateDatesOfMonth();
+const datesObjsOfMonth = generateDateObjsOfMonth();
 
 export {
   nowDate,
   day,
   month,
   year,
-  datesOfMonth,
+  datesObjsOfMonth,
 };
