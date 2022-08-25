@@ -4,20 +4,25 @@
 
 .Calendar-header {
   background-color: #FAFAFA;
-  min-height: 100vh;
+  min-height: 6vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-between;
+  font-size: calc(2vmin);
   color: #1F1F1F;
 
-  .month {
+  .month-and-year {
     margin: 1vh;
-    font-size: calc(10px + 4vmin);
-  }
 
-  .year {
-    margin: 1vh;
+    .month {
+      margin: 0.8vh;
+      font-size: calc(3.5vmin);
+      font-weight: 600;
+    }
+
+    .year {
+      margin: 0.8vh;
+    }
   }
 }
 

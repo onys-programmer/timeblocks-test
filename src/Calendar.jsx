@@ -5,8 +5,10 @@ function Calendar() {
   return (
     <div className="Calendar">
       <header className="Calendar-header">
-        <span className="month">{month}</span>
-        <span className="year">{year}</span>
+        <nav className='month-and-year'>
+          <span className="month">{month}</span>
+          <span className="year">{year}</span>
+        </nav>
       </header>
     </div>
   );
