@@ -1,4 +1,4 @@
-import generateDatesOfMonth from "./generator";
+import { generateDatesOfMonth } from "./generators";
 
 const nowDate = new Date();
 

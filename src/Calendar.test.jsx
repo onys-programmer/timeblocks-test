@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import Calendar from './Calendar';
-import { year, month } from './now';
+import { year, month } from './utils/now';
 
 describe('Calendar는', () => {
   it('현재 연도를 렌더합니다.', () => {

@@ -1,3 +1,5 @@
+import isLeapYear from "./isLeapYear";
+
 const generateDatesOfMonth = (nowDate = new Date()) => {
   const month = nowDate.getMonth();
 
@@ -16,4 +18,12 @@ const generateDatesOfMonth = (nowDate = new Date()) => {
   return datesOfMonth;
 }
 
-export default generateDatesOfMonth;
+const generateDateNumsOfYear = (year = new Date().getFullYear()) => {
+  const februaryDatesNum = isLeapYear(year) ? 29 : 28;
+  return [31, februaryDatesNum, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+}
+
+export {
+  generateDatesOfMonth,
+  generateDateNumsOfYear,
+};
