@@ -1,7 +1,11 @@
-function DatePart({ dates }) {
+function DatePart({ dateObjs }) {
   return (
     <div className="DatePart">
-      {dates.map(fixtureDate => <li key={fixtureDate}>{fixtureDate}</li>)}
+      {dateObjs.map(dateObj =>
+        <li key={dateObj.getDate()}>
+          {dateObj.getDate()}
+        </li>
+      )}
     </div>
   );
 }

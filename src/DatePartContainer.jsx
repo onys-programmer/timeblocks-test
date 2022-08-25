@@ -1,11 +1,12 @@
 import DatePart from "./DatePart";
-import range from "./utils/range";
+import { generateDateObjsOfMonth } from "./utils/generators";
 
 function DatePartContainer() {
-  const fixtureDates = range(1, 32);
+  const now = new Date();
+  const dateObjsOfMonth = generateDateObjsOfMonth(now);
 
   return (
-    <DatePart dates={fixtureDates} />
+    <DatePart dateObjs={dateObjsOfMonth} />
   );
 }
 
