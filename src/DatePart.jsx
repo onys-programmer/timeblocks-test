@@ -1,10 +1,13 @@
+import DateBoxContainer from "./DateBoxContainer";
+
 function DatePart({ dateObjs }) {
   return (
     <div className="DatePart">
       {dateObjs.map(dateObj =>
-        <li key={dateObj.getDate()}>
-          {dateObj.getDate()}
-        </li>
+        <DateBoxContainer
+          key={dateObj.getDate()}
+          dateObj={dateObj}
+        />
       )}
     </div>
   );
