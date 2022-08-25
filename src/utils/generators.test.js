@@ -5,6 +5,8 @@ import {
 
 import isLeapYear from './isLeapYear';
 
+import range from './range';
+
 describe('generator,', () => {
   describe('generateDatesNumsOfYear', () => {
     it('는 현재 연도의 월별 날짜 수 배열을 리턴합니다.', () => {
@@ -58,14 +60,6 @@ describe('generator,', () => {
 
     it('가 리턴하는 날짜 객체 배열의 day는 1일부터 끝일까지의 sequence입니다.', () => {
       const dateObjsOfMonth = generateDateObjsOfMonth(now);
-
-      function range(start, end) {
-        let array = [];
-        for (let i = start; i < end; ++i) {
-          array.push(i);
-        }
-        return array;
-      }
 
       expect(JSON.stringify(dateObjsOfMonth.map(dateObj => dateObj.getDate())))
         .toBe(JSON.stringify(range(1, datesNumOfThisMonth + 1)));
