@@ -1,5 +1,5 @@
 import './Calendar.scss';
-import { month, year } from './now';
+import { month, year } from './utils/now';
 
 function Calendar() {
   return (
