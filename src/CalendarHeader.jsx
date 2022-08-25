@@ -1,10 +1,9 @@
 import './Calendar.scss';
-import { month, year } from './utils/now';
 
-function Calendar() {
+function CalendarHeader({ month, year }) {
   return (
-    <div className="Calendar">
-      <header className="Calendar-header">
+    <div className="CalendarHeader">
+      <header className="calendar-header">
         <nav className='month-and-year'>
           <span className="month">{month}</span>
           <span className="year">{year}</span>
@@ -14,4 +13,4 @@ function Calendar() {
   );
 }
 
-export default Calendar;
+export default CalendarHeader;

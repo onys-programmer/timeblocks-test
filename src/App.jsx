@@ -1,8 +1,8 @@
-import Calendar from './Calendar.jsx';
+import CalendarContainer from './CalendarContainer.jsx';
 
 function App() {
   return (
-    <Calendar />
+    <CalendarContainer />
   );
 }
 

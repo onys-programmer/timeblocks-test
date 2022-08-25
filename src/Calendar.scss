@@ -1,31 +1,31 @@
-.Calendar {
+.CalendarHeader {
   text-align: center;
-}
 
-.Calendar-header {
-  background-color: #FAFAFA;
-  min-height: 6vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: calc(2vmin);
-  color: #1F1F1F;
+  .calendar-header {
+    background-color: #FAFAFA;
+    min-height: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: calc(2vmin);
+    color: #1F1F1F;
 
-  .month-and-year {
-    margin: 1vh;
+    .month-and-year {
+      margin: 1vh;
 
-    .month {
-      margin: 0.8vh;
-      font-size: calc(3.5vmin);
-      font-weight: 600;
-    }
+      .month {
+        margin: 0.8vh;
+        font-size: calc(3.5vmin);
+        font-weight: 600;
+      }
 
-    .year {
-      margin: 0.8vh;
+      .year {
+        margin: 0.8vh;
+      }
     }
   }
-}
 
-.Calendar-link {
-  color: #61dafb;
+  .Calendar-link {
+    color: #61dafb;
+  }
 }
