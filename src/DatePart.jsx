@@ -1,5 +1,7 @@
 import DateBoxContainer from "./DateBoxContainer";
 
+import './DatePart.scss';
+
 function DatePart({ dateObjs }) {
   return (
     <div className="DatePart">

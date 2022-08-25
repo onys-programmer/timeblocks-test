@@ -1,0 +1,10 @@
+.DateBox {
+  margin: 0.5vh;
+  width: 12.5vw;
+  height: 12.5vw;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #cde9ff;
+  }
+}

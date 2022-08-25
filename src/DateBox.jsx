@@ -1,3 +1,5 @@
+import './DateBox.scss';
+
 function DateBox({ dateObj }) {
   const day = dateObj.getDate();
   return (
