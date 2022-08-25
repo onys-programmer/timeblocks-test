@@ -5,8 +5,8 @@ import { year, month } from './utils/now';
 describe('Calendar는', () => {
   it('현재 연도를 렌더합니다.', () => {
     render(<CalendarContainer />);
-    const yearElenent = screen.getByText(year);
-    expect(yearElenent).toBeInTheDocument();
+    const yearElement = screen.getByText(year);
+    expect(yearElement).toBeInTheDocument();
   });
 
   it('현재 Month를 렌더합니다.', () => {
