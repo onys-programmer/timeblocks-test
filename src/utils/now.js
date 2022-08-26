@@ -1,13 +1,13 @@
-const nowDate = new Date();
+const dateObj = new Date();
 
-const day = nowDate.getDate();
+const day = dateObj.getDate();
 
-const month = nowDate.getMonth() + 1;
+const month = dateObj.getMonth() + 1;
 
-const year = nowDate.getFullYear();
+const year = dateObj.getFullYear();
 
 export {
-  nowDate,
+  dateObj,
   day,
   month,
   year,

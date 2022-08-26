@@ -1,7 +1,6 @@
 import CalendarHeader from './CalendarHeader';
-import { month, year } from './utils/now';
 
-function CalendarHeaderContainer() {
+function CalendarHeaderContainer({ referenceDate: { month, year } }) {
   return (
     <CalendarHeader month={month} year={year} />
   );

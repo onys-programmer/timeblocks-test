@@ -1,10 +1,10 @@
 import './DateBox.scss';
 
 function DateBox({ dateObj }) {
-  const day = dateObj.getDate();
+  const date = dateObj.getDate();
   return (
     <div className="DateBox">
-      {day}
+      {date}
     </div>
   );
 }
