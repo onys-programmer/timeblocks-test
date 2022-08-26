@@ -15,7 +15,7 @@ function DateBoxContainer({ dateObj }) {
   }
 
   const todaysSchedules = schedules.filter(
-    schedule => schedule['date'].toLocaleString() === dateObj.toLocaleString()
+    schedule => schedule['startDate'] <= dateObj && schedule['endDate'] >= dateObj
   );
 
   const dateStatus = {
