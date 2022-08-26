@@ -1,10 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import DatePartContainer from './DatePartContainer';
 import { generateDateObjsOfMonth } from './utils/generators';
+import referenceDate from './__fixtures__/referenceDate';
 
 describe('DatePartContainer', () => {
   it('는 해당 월의 날짜들(1~끝일)을 렌더합니다.', () => {
-    render(<DatePartContainer />);
+    render(<DatePartContainer
+      referenceDate={referenceDate}
+    />);
 
     const now = new Date();
     const datesObjsOfMonth = generateDateObjsOfMonth(now);
@@ -14,7 +17,7 @@ describe('DatePartContainer', () => {
     const dateElement3 = screen.getAllByText(3);
 
     const lastDate = datesObjsOfMonth.pop().getDate();
-    const lastDateElement = screen.getByText(lastDate);
+    const lastDateElement = screen.getAllByText(lastDate);
 
     expect(dateElement1).not.toBeNull();
     expect(dateElement2).not.toBeNull();
