@@ -26,9 +26,11 @@ const reducer = (state, action) => {
         pickedDate: action.payload,
       };
     case 'CREATE_SCHEDULE':
+      const newSchedules = [...state.schedules, action.payload];
+      localStorage.setItem('schedules', JSON.stringify(newSchedules));
       return {
         ...state,
-        schedules: [...state.schedules, action.payload],
+        schedules: newSchedules,
       };
     case 'UPDATE_DIALOG_FORM_TITLE':
       return {

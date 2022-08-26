@@ -11,11 +11,23 @@ function DialogContainer() {
     dispatch({ type: 'UPDATE_DIALOG_FORM_TITLE', payload: e.target.value });
   };
 
+  const handleSubmitSchedule = (e) => {
+    e.preventDefault();
+
+    const schedule = {
+      id: pickedDate.getTime(),
+      date: pickedDate,
+      title,
+      isCompleted: false,
+    };
+    dispatch({ type: 'CREATE_SCHEDULE', payload: schedule });
+  };
+
   return (
     <Dialog
       dateString={dateString}
       onChange={handleChangeTitle}
-      title={title}
+      onSubmit={handleSubmitSchedule}
     />
   );
 }

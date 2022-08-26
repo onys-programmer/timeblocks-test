@@ -1,9 +1,11 @@
 import './Dialog.scss';
 
-function Dialog({ dateString, onChange }) {
+function Dialog({ dateString, onChange, onSubmit }) {
   return (
     <div className="Dialog">
-      <form action="">
+      <form
+        onSubmit={onSubmit}
+      >
         일정 추가를 위한 dialog입니다.
         선택된 날짜는 {dateString} 입니다.
         <input
