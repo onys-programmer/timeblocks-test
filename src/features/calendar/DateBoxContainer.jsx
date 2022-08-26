@@ -7,6 +7,7 @@ function DateBoxContainer({ dateObj }) {
 
   const handleClickPickDate = () => {
     dispatch({ type: 'PICK_DATE', payload: dateObj });
+    dispatch({ type: 'UPDATE_REFERENCE_DATE', payload: dateObj });
   }
 
   const todaysSchedules = schedules.filter(

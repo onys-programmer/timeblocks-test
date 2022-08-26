@@ -8,15 +8,15 @@ import { dateDayMonthYear } from '../../utils/generators';
 function CalendarHeaderContainer({ referenceDate }) {
   const { dispatch } = useContext(Context);
 
-  const { date, month, year } = dateDayMonthYear(referenceDate);
+  const { month, year } = dateDayMonthYear(referenceDate);
 
   const handleClickGoToPrevMonth = () => {
-    const newReferenceDate = new Date(year, month - 1, date);
+    const newReferenceDate = new Date(year, month - 1, 1);
     dispatch({ type: "UPDATE_REFERENCE_DATE", payload: newReferenceDate });
   };
 
   const handleClickGoToPostMonth = () => {
-    const newReferenceDate = new Date(year, month + 1, date);
+    const newReferenceDate = new Date(year, month + 1, 1);
     dispatch({ type: "UPDATE_REFERENCE_DATE", payload: newReferenceDate });
   };
 
