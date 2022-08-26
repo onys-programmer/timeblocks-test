@@ -15,7 +15,12 @@ function DateBoxContainer({ dateObj }) {
   }
 
   const todaysSchedules = schedules.filter(
-    schedule => schedule['startDate'] <= dateObj && schedule['endDate'] >= dateObj
+    schedule => {
+      if (schedule['startDate'] <= dateObj && schedule['endDate'] >= dateObj) {
+        return true
+      };
+      return false;
+    }
   );
 
   const dateStatus = {

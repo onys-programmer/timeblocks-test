@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { Context } from '../../App';
-import { generateRandomColor } from '../../utils/generators';
+import { dateDayMonthYear, generateRandomColor } from '../../utils/generators';
 
 import Dialog from './Dialog';
 
@@ -20,9 +20,8 @@ function DialogContainer() {
   const handleSubmitSchedule = (e) => {
     e.preventDefault();
 
-    console.log(pickedDate);
-
-    const endDate = new Date();
+    const { year, month, date } = dateDayMonthYear(pickedDate);
+    const endDate = new Date(year, month, date);
     endDate.setDate(pickedDate.getDate() + Math.floor(Math.random() * 5));
 
     const schedule = {

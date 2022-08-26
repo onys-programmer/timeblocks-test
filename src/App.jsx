@@ -78,7 +78,6 @@ export const Context = React.createContext(initialState);
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  console.log(state);
   return (
     <Context.Provider value={{ state, dispatch }}>
       <CalendarContainer />
