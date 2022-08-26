@@ -14,8 +14,9 @@ function DialogContainer() {
   const handleSubmitSchedule = (e) => {
     e.preventDefault();
 
+    console.log(pickedDate);
     const schedule = {
-      id: pickedDate.getTime(),
+      id: new Date().getTime(),
       date: pickedDate,
       title,
       isCompleted: false,

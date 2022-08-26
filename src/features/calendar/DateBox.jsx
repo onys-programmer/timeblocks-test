@@ -1,15 +1,21 @@
 import './DateBox.scss';
 
-function DateBox({ dateObj, onClick }) {
-  const date = dateObj.getDate();
-
+function DateBox({ date, schedules, onClick }) {
   return (
     <div
       className="DateBox"
       onClick={onClick}
     >
       {date}
-    </div>
+      {
+        schedules.length !== 0 &&
+        schedules.map(schedule =>
+          <li key={schedule.id}>
+            {schedule.title}
+          </li>
+        )
+      }
+    </div >
   );
 }
 

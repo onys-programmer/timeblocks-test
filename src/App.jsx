@@ -25,6 +25,14 @@ const reducer = (state, action) => {
         ...state,
         pickedDate: action.payload,
       };
+
+    case 'LOAD_SCHEDULE':
+      const schedules = JSON.parse(localStorage.getItem('schedules'));
+      return {
+        ...state,
+        schedules,
+      }
+
     case 'CREATE_SCHEDULE':
       const newSchedules = [...state.schedules, action.payload];
       localStorage.setItem('schedules', JSON.stringify(newSchedules));
@@ -32,6 +40,7 @@ const reducer = (state, action) => {
         ...state,
         schedules: newSchedules,
       };
+
     case 'UPDATE_DIALOG_FORM_TITLE':
       return {
         ...state,
@@ -40,6 +49,7 @@ const reducer = (state, action) => {
           title: action.payload,
         }
       };
+
     default:
       return state;
   }
@@ -49,7 +59,7 @@ export const Context = React.createContext(initialState);
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  console.log(state);
   return (
     <Context.Provider value={{ state, dispatch }}>
       <CalendarContainer />

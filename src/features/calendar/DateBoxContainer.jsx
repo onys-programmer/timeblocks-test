@@ -3,13 +3,20 @@ import { Context } from '../../App';
 import DateBox from './DateBox';
 
 function DateBoxContainer({ dateObj }) {
-  const { dispatch } = useContext(Context);
+  const { state: { schedules }, dispatch } = useContext(Context);
 
   const handleClickPickDate = () => {
     dispatch({ type: 'PICK_DATE', payload: dateObj });
   }
+  const todaysSchedules = schedules.filter(
+    schedule => schedule['date'].toLocaleString() === dateObj.toLocaleString()
+  );
+
   return (
-    <DateBox dateObj={dateObj} onClick={handleClickPickDate} />
+    <DateBox
+      date={dateObj.getDate()}
+      schedules={todaysSchedules}
+      onClick={handleClickPickDate} />
   );
 }
 
