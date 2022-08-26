@@ -2,10 +2,24 @@
   margin: 0.5vh;
   width: 12.5vw;
   height: 12.5vw;
+  font-weight: 600;
+
   cursor: pointer;
 
   &:hover {
     background-color: #cde9ff;
+  }
+
+  .saturday {
+    color: #2100dd;
+  }
+
+  .sunday {
+    color: #cf0000;
+  }
+
+  .not-this-month {
+    color: #e2e2e2;
   }
 }
 
@@ -15,8 +29,4 @@
   &:hover {
     background-color: #4f93c7;
   }
-}
-
-.not-this-month {
-  color: #e2e2e2;
 }

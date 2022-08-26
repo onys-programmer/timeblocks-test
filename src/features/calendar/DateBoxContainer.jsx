@@ -18,23 +18,35 @@ function DateBoxContainer({ dateObj }) {
     schedule => schedule['date'].toLocaleString() === dateObj.toLocaleString()
   );
 
-  const isPicked =
+  const dateStatus = {
+    isPicked: false,
+    isThisMonth: true,
+    isWeekend: 'weekday',
+  };
+
+  dateStatus.isPicked =
     pickedDate.toLocaleString() === dateObj.toLocaleString()
       ? true
       : false;
 
-  const isThisMonth =
+  dateStatus.isThisMonth =
     referenceDate.getMonth() === dateObj.getMonth()
       ? true
       : false;
+
+  const day = dateObj.getDay();
+  if (day === 0) {
+    dateStatus.isWeekend = 'sunday';
+  } else if (day === 6) {
+    dateStatus.isWeekend = 'saturday';
+  }
 
   return (
     <DateBox
       date={dateObj.getDate()}
       schedules={todaysSchedules}
       onClick={handleClickPickDate}
-      isPicked={isPicked}
-      isThisMonth={isThisMonth}
+      dateStatus={dateStatus}
     />
   );
 }

@@ -1,12 +1,20 @@
 import './DateBox.scss';
 
-function DateBox({ date, schedules, onClick, isPicked, isThisMonth }) {
+function DateBox({ date, schedules, onClick,
+  dateStatus: {
+    isPicked,
+    isThisMonth,
+    isWeekend,
+  }
+}) {
   return (
     <div
-      className={`DateBox ${isPicked ? 'picked' : ''} ${!isThisMonth ? 'not-this-month' : ''}`}
+      className={`DateBox ${isPicked ? 'picked' : ''}`}
       onClick={onClick}
     >
-      {date}
+      <p className={`date ${!isThisMonth ? 'not-this-month' : ''} ${isWeekend}`}>
+        {date}
+      </p>
       {
         schedules.length !== 0 &&
         schedules.map(schedule =>
