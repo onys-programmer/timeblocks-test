@@ -24,9 +24,14 @@ function DialogContainer() {
     dispatch({ type: 'CREATE_SCHEDULE', payload: schedule });
   };
 
+  const handleClickCloseModal = () => {
+    dispatch({ type: 'CLOSE_MODAL' });
+  };
+
   return (
     <Dialog
       dateString={dateString}
+      onClick={handleClickCloseModal}
       onChange={handleChangeTitle}
       onSubmit={handleSubmitSchedule}
     />

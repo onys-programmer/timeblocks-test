@@ -5,6 +5,7 @@ import DialogContainer from './features/schedule/DialogContainer.jsx';
 
 const initialState = {
   pickedDate: new Date(2022, 7, 26),
+  showModal: false,
   schedules: [
     {
       id: 100,
@@ -24,6 +25,13 @@ const reducer = (state, action) => {
       return {
         ...state,
         pickedDate: action.payload,
+        showModal: true,
+      };
+
+    case 'CLOSE_MODAL':
+      return {
+        ...state,
+        showModal: false,
       };
 
     case 'LOAD_SCHEDULE':
@@ -31,7 +39,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         schedules,
-      }
+      };
 
     case 'CREATE_SCHEDULE':
       const newSchedules = [...state.schedules, action.payload];
@@ -59,11 +67,15 @@ export const Context = React.createContext(initialState);
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
+
   console.log(state);
   return (
     <Context.Provider value={{ state, dispatch }}>
       <CalendarContainer />
-      <DialogContainer />
+      {
+        state.showModal &&
+        <DialogContainer />
+      }
     </Context.Provider>
   );
 }
