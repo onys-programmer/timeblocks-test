@@ -1,3 +1,4 @@
+import DayRow from "./DayRow";
 import DatePart from "./DatePart";
 import { generateDateObjsOfMonth } from "./utils/generators";
 
@@ -6,7 +7,10 @@ function DatePartContainer() {
   const dateObjsOfMonth = generateDateObjsOfMonth(now);
 
   return (
-    <DatePart dateObjs={dateObjsOfMonth} />
+    <>
+      <DayRow />
+      <DatePart dateObjs={dateObjsOfMonth} />
+    </>
   );
 }
 

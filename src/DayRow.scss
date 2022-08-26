@@ -1,0 +1,12 @@
+.DayRow {
+  display: flex;
+  justify-content: space-around;
+
+  text-align: center;
+  margin: 1vh;
+
+  .day-item {
+    margin: 0.5vh;
+    text-align: center;
+  }
+}
