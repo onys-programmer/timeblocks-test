@@ -13,6 +13,8 @@ const initialState = {
       date: {},
       title: '밥 먹기',
       color: '#0075FF',
+      startDate: new Date(2022, 9, 26),
+      endDate: new Date(2022, 9, 29),
       isCompleted: false,
     },
   ],

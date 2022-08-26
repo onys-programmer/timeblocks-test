@@ -22,11 +22,16 @@ function DialogContainer() {
 
     console.log(pickedDate);
 
+    const endDate = new Date();
+    endDate.setDate(pickedDate.getDate() + Math.floor(Math.random() * 5));
+
     const schedule = {
       id: new Date().getTime(),
       date: pickedDate,
       title,
       color: generateRandomColor(),
+      startDate: pickedDate,
+      endDate: endDate,
       isCompleted: false,
     };
     dispatch({ type: 'CREATE_SCHEDULE', payload: schedule });
