@@ -10,6 +10,20 @@
     font-size: calc(2vmin);
     color: #1F1F1F;
 
+    .btn {
+      margin: 2vh;
+      width: 8vh;
+      height: 4vh;
+      background-color: #FAFAFA;
+      cursor: pointer;
+      font-size: large;
+      border: 0;
+
+      &:hover {
+        background-color: #ffffff;
+      }
+    }
+
     .month-and-year {
       margin: 1vh;
 

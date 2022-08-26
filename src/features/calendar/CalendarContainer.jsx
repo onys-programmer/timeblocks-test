@@ -1,8 +1,11 @@
+import { useContext } from 'react';
+import { Context } from '../../App';
+
 import CalendarHeaderContainer from './CalendarHeaderContainer';
 import DatePartContainer from './DatePartContainer';
 
 function CalendarContainer() {
-  const referenceDate = new Date();
+  const { state: { referenceDate } } = useContext(Context);
 
   return (
     <div className="CalendarContainer">

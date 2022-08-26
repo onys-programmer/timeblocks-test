@@ -4,6 +4,7 @@ import CalendarContainer from './features/calendar/CalendarContainer.jsx';
 import DialogContainer from './features/schedule/DialogContainer.jsx';
 
 const initialState = {
+  referenceDate: new Date(2022, 7, 26),
   pickedDate: new Date(2022, 7, 26),
   showModal: false,
   schedules: [
@@ -21,6 +22,12 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case 'UPDATE_REFERENCE_DATE':
+      return {
+        ...state,
+        referenceDate: action.payload,
+      };
+
     case 'PICK_DATE':
       return {
         ...state,
