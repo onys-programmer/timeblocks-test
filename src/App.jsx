@@ -13,6 +13,9 @@ const initialState = {
       isCompleted: false,
     },
   ],
+  dialogForm: {
+    title: '',
+  },
 };
 
 const reducer = (state, action) => {
@@ -26,6 +29,14 @@ const reducer = (state, action) => {
       return {
         ...state,
         schedules: [...state.schedules, action.payload],
+      };
+    case 'UPDATE_DIALOG_FORM_TITLE':
+      return {
+        ...state,
+        dialogForm: {
+          ...state.dialogForm,
+          title: action.payload,
+        }
       };
     default:
       return state;

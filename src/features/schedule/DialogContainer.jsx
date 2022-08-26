@@ -3,11 +3,20 @@ import { Context } from '../../App';
 import Dialog from './Dialog';
 
 function DialogContainer() {
-  const { state } = useContext(Context);
-  const { pickedDate } = state;
+  const { state, dispatch } = useContext(Context);
+  const { pickedDate, dialogForm: { title } } = state;
+  const dateString = pickedDate.toLocaleDateString();
+
+  const handleChangeTitle = (e) => {
+    dispatch({ type: 'UPDATE_DIALOG_FORM_TITLE', payload: e.target.value });
+  };
 
   return (
-    <Dialog dateObj={pickedDate} />
+    <Dialog
+      dateString={dateString}
+      onChange={handleChangeTitle}
+      title={title}
+    />
   );
 }
 
