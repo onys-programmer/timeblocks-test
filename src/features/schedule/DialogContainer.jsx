@@ -7,6 +7,10 @@ function DialogContainer() {
   const { pickedDate, dialogForm: { title } } = state;
   const dateString = pickedDate.toLocaleDateString();
 
+  const handleClickCloseModal = () => {
+    dispatch({ type: 'CLOSE_MODAL' });
+  };
+
   const handleChangeTitle = (e) => {
     dispatch({ type: 'UPDATE_DIALOG_FORM_TITLE', payload: e.target.value });
   };
@@ -22,10 +26,6 @@ function DialogContainer() {
       isCompleted: false,
     };
     dispatch({ type: 'CREATE_SCHEDULE', payload: schedule });
-    dispatch({ type: 'CLOSE_MODAL' });
-  };
-
-  const handleClickCloseModal = () => {
     dispatch({ type: 'CLOSE_MODAL' });
   };
 
