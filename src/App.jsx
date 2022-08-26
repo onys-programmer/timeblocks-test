@@ -80,7 +80,9 @@ function App() {
 
   return (
     <Context.Provider value={{ state, dispatch }}>
-      <CalendarContainer />
+      <CalendarContainer
+        modalIsOpened={state.showModal}
+      />
       {
         state.showModal &&
         <DialogContainer />

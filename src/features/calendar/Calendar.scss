@@ -1,45 +1,52 @@
-.CalendarHeader {
-  text-align: center;
+.Calendar {
+  .CalendarHeader {
+    text-align: center;
 
-  .calendar-header {
-    background-color: #FAFAFA;
-    min-height: 6vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: calc(2vmin);
-    color: #1F1F1F;
-
-    .btn {
-      margin: 2vh;
-      width: 8vh;
-      height: 4vh;
+    .calendar-header {
       background-color: #FAFAFA;
-      cursor: pointer;
-      font-size: large;
-      border: 0;
+      min-height: 6vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: calc(2vmin);
+      color: #1F1F1F;
 
-      &:hover {
-        background-color: #ffffff;
+      .btn {
+        margin: 2vh;
+        width: 8vh;
+        height: 4vh;
+        background-color: #FAFAFA;
+        cursor: pointer;
+        font-size: large;
+        border: 0;
+
+        &:hover {
+          background-color: #ffffff;
+        }
+      }
+
+      .month-and-year {
+        margin: 1vh;
+
+        .month {
+          margin: 0.8vh;
+          font-size: calc(3.5vmin);
+          font-weight: 600;
+        }
+
+        .year {
+          margin: 0.8vh;
+        }
       }
     }
 
-    .month-and-year {
-      margin: 1vh;
-
-      .month {
-        margin: 0.8vh;
-        font-size: calc(3.5vmin);
-        font-weight: 600;
-      }
-
-      .year {
-        margin: 0.8vh;
-      }
+    .Calendar-link {
+      color: #61dafb;
     }
   }
+}
 
-  .Calendar-link {
-    color: #61dafb;
-  }
+.modal-is-opened {
+  background-color: #FAFAFA;
+  filter: brightness(50%);
 }
