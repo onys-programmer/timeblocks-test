@@ -23,7 +23,17 @@ const generateDatesNumsOfYear = (year = new Date().getFullYear()) => {
   return [31, februaryDatesNum, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 }
 
+const dateDayMonthYear = dateObj => {
+  const date = dateObj.getDate();
+  const day = dateObj.getDay();
+  const month = dateObj.getMonth();
+  const year = dateObj.getFullYear();
+
+  return [date, day, month, year];
+}
+
 export {
   generateDateObjsOfMonth,
   generateDatesNumsOfYear,
+  dateDayMonthYear,
 };
