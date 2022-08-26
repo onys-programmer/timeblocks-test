@@ -7,7 +7,6 @@ import {
 
 function DatePartContainer({ referenceDate }) {
   const dateObjs = generateDateObjsOfMonth(referenceDate);
-  console.log(dateObjs);
   // 첫날의 요일 구하기. 수요일이면 3. -3까지 date 객체 unshift
   // 끝날의 요일 구하기. 화요일이면 2. +4까지 date 객체 push
 
