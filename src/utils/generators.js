@@ -1,9 +1,9 @@
 import isLeapYear from "./isLeapYear";
 
-const generateDateObjsOfMonth = (nowDate = new Date()) => {
-  const month = nowDate.getMonth();
+const generateDateObjsOfMonth = (dateObj = new Date()) => {
+  const month = dateObj.getMonth();
 
-  const year = nowDate.getFullYear();
+  const year = dateObj.getFullYear();
 
   const datesOfMonth = [];
 
@@ -29,7 +29,7 @@ const dateDayMonthYear = dateObj => {
   const month = dateObj.getMonth();
   const year = dateObj.getFullYear();
 
-  return [date, day, month, year];
+  return { date, day, month, year };
 }
 
 export {

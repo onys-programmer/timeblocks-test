@@ -5,8 +5,9 @@ import {
   dateDayMonthYear
 } from "./utils/generators";
 
-function DatePartContainer({ referenceDate: { dateObj } }) {
-  const dateObjs = generateDateObjsOfMonth(dateObj);
+function DatePartContainer({ referenceDate }) {
+  const dateObjs = generateDateObjsOfMonth(referenceDate);
+  console.log(dateObjs);
   // 첫날의 요일 구하기. 수요일이면 3. -3까지 date 객체 unshift
   // 끝날의 요일 구하기. 화요일이면 2. +4까지 date 객체 push
 
@@ -19,19 +20,19 @@ function DatePartContainer({ referenceDate: { dateObj } }) {
   fillPostDateObjs();
 
   function fillPrevDateObjs() {
-    const [firstDate, firstDay, firstMonth, firstYear] = dateDayMonthYear(firstDateObj);
+    const { date, day, month, year } = dateDayMonthYear(firstDateObj);
 
-    for (let i = firstDay; i > 0; i--) {
-      const prevDate = new Date(firstYear, firstMonth, firstDate, 24 * i * -1);
+    for (let i = day; i > 0; i--) {
+      const prevDate = new Date(year, month, date, 24 * i * -1);
       fullDateObjs.unshift(prevDate);
     }
   };
 
   function fillPostDateObjs() {
-    const [lastDate, lastDay, lastMonth, lastYear] = dateDayMonthYear(lastDateObj);
+    const { date, day, month, year } = dateDayMonthYear(lastDateObj);
 
-    for (let i = 1; i < 7 - lastDay; i++) {
-      const postDate = new Date(lastYear, lastMonth, lastDate, 24 * i);
+    for (let i = 1; i < 7 - day; i++) {
+      const postDate = new Date(year, month, date, 24 * i);
       fullDateObjs.push(postDate);
     }
   }

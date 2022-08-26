@@ -1,16 +1,15 @@
 import { render, screen } from '@testing-library/react';
 import CalendarHeaderContainer from './CalendarHeaderContainer';
-import referenceDate from './__fixtures__/referenceDate';
 
 describe('CalendarHeaderContainer는', () => {
-  const { year, month } = referenceDate;
+  const referenceDate = new Date(2022, 5, 26) // 2022년 6월 26일
 
   it('기준 일의 연도를 렌더합니다.', () => {
     render(<CalendarHeaderContainer
       referenceDate={referenceDate}
     />);
 
-    const yearElement = screen.getByText(year);
+    const yearElement = screen.getByText(2022);
     expect(yearElement).toBeInTheDocument();
   });
 
@@ -19,7 +18,7 @@ describe('CalendarHeaderContainer는', () => {
       referenceDate={referenceDate}
     />);
 
-    const monthElement = screen.getByText(month);
+    const monthElement = screen.getByText(6);
     expect(monthElement).toBeInTheDocument();
   });
 });

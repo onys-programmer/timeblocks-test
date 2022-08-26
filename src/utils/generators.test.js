@@ -46,23 +46,20 @@ describe('generator,', () => {
   });
 
   describe('generateDateObjsOfMonth', () => {
-    const now = new Date();
-    const year = now.getFullYear();
-    const month = now.getMonth();
-    const datesNumOfThisMonth = generateDatesNumsOfYear(year)[month];
+    const now = new Date(2022, 5, 26); // 2022.06.26
 
     it('는 해당 날짜가 속한 달의 날짜 객체 배열을 리턴합니다.', () => {
       const dateObjsOfMonth = generateDateObjsOfMonth(now);
 
-      expect(dateObjsOfMonth.length).toBe(datesNumOfThisMonth);
-      expect(dateObjsOfMonth.filter(dateObj => dateObj.getMonth() !== month).length).toBe(0);
+      expect(dateObjsOfMonth.length).toBe(30);
+      expect(dateObjsOfMonth.filter(dateObj => dateObj.getMonth() !== 5).length).toBe(0);
     });
 
     it('가 리턴하는 날짜 객체 배열의 day는 1일부터 끝일까지의 sequence입니다.', () => {
       const dateObjsOfMonth = generateDateObjsOfMonth(now);
 
       expect(JSON.stringify(dateObjsOfMonth.map(dateObj => dateObj.getDate())))
-        .toBe(JSON.stringify(range(1, datesNumOfThisMonth + 1)));
+        .toBe(JSON.stringify(range(1, 31))); // 1 ~ 30까지 시퀀스
     })
   });
 });
