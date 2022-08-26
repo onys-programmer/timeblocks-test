@@ -32,8 +32,13 @@ const dateDayMonthYear = dateObj => {
   return { date, day, month, year };
 }
 
+const generateRandomColor = () => {
+  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+};
+
 export {
   generateDateObjsOfMonth,
   generateDatesNumsOfYear,
   dateDayMonthYear,
+  generateRandomColor,
 };

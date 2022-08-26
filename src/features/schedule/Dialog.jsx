@@ -10,6 +10,7 @@ function Dialog({ dateString, onChange, onSubmit, onClick }) {
         <h2>{dateString}</h2>
         <br></br>
         <input
+          autoFocus="true"
           type="text"
           onChange={onChange}
           placeholder="일정을 입력해주세요."

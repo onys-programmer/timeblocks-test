@@ -12,6 +12,7 @@ const initialState = {
       id: 100,
       date: {},
       title: '밥 먹기',
+      color: '#0075FF',
       isCompleted: false,
     },
   ],

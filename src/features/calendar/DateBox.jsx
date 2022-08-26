@@ -18,7 +18,11 @@ function DateBox({ date, schedules, onClick,
       {
         schedules.length !== 0 &&
         schedules.map(schedule =>
-          <li key={schedule.id}>
+          <li
+            key={schedule.id}
+            className='schedule'
+            style={{ backgroundColor: schedule.color }}
+          >
             {schedule.title}
           </li>
         )

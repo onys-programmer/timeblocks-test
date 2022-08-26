@@ -4,6 +4,7 @@
   font-weight: 600;
   border-bottom: 0.1rem solid #e2e2e2;
   cursor: pointer;
+  overflow: hidden;
 
   &:hover {
     background-color: #cde9ff;
@@ -19,6 +20,13 @@
 
   .not-this-month {
     color: #e2e2e2;
+  }
+
+  .schedule {
+    max-height: 100%;
+    font-weight: 300;
+    color: #e2e2e2;
+    overflow-y: scroll;
   }
 }
 

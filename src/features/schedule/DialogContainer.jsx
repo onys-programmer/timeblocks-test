@@ -1,5 +1,7 @@
 import { useContext } from 'react';
 import { Context } from '../../App';
+import { generateRandomColor } from '../../utils/generators';
+
 import Dialog from './Dialog';
 
 function DialogContainer() {
@@ -19,10 +21,12 @@ function DialogContainer() {
     e.preventDefault();
 
     console.log(pickedDate);
+
     const schedule = {
       id: new Date().getTime(),
       date: pickedDate,
       title,
+      color: generateRandomColor(),
       isCompleted: false,
     };
     dispatch({ type: 'CREATE_SCHEDULE', payload: schedule });
