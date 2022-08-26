@@ -3,7 +3,7 @@ import DatePart from "./DatePart";
 import {
   generateDateObjsOfMonth,
   dateDayMonthYear
-} from "./utils/generators";
+} from "../../utils/generators";
 
 function DatePartContainer({ referenceDate }) {
   const dateObjs = generateDateObjsOfMonth(referenceDate);

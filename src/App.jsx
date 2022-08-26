@@ -1,4 +1,4 @@
-import CalendarContainer from './CalendarContainer.jsx';
+import CalendarContainer from './features/calendar/CalendarContainer.jsx';
 
 function App() {
   return (
