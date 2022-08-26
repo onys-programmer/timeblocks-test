@@ -4,8 +4,8 @@ import CalendarContainer from './features/calendar/CalendarContainer.jsx';
 import DialogContainer from './features/schedule/DialogContainer.jsx';
 
 const initialState = {
-  referenceDate: new Date(2022, 7, 26),
-  pickedDate: new Date(2022, 7, 26),
+  referenceDate: new Date(),
+  pickedDate: new Date(),
   showModal: false,
   schedules: [
     {

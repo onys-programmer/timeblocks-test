@@ -1,9 +1,9 @@
 import './DateBox.scss';
 
-function DateBox({ date, schedules, onClick }) {
+function DateBox({ date, schedules, onClick, isPicked }) {
   return (
     <div
-      className="DateBox"
+      className={`DateBox ${!isPicked ? '' : 'picked'}`}
       onClick={onClick}
     >
       {date}

@@ -8,3 +8,11 @@
     background-color: #cde9ff;
   }
 }
+
+.picked {
+  background-color: #cde9ff;
+
+  &:hover {
+    background-color: #4f93c7;
+  }
+}

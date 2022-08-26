@@ -3,20 +3,28 @@ import { Context } from '../../App';
 import DateBox from './DateBox';
 
 function DateBoxContainer({ dateObj }) {
-  const { state: { schedules }, dispatch } = useContext(Context);
+  const { state: { pickedDate, schedules }, dispatch } = useContext(Context);
 
   const handleClickPickDate = () => {
     dispatch({ type: 'PICK_DATE', payload: dateObj });
   }
+
   const todaysSchedules = schedules.filter(
     schedule => schedule['date'].toLocaleString() === dateObj.toLocaleString()
   );
+
+  const isPicked =
+    pickedDate.toLocaleString() === dateObj.toLocaleString()
+      ? true
+      : false;
 
   return (
     <DateBox
       date={dateObj.getDate()}
       schedules={todaysSchedules}
-      onClick={handleClickPickDate} />
+      onClick={handleClickPickDate}
+      isPicked={isPicked}
+    />
   );
 }
 
