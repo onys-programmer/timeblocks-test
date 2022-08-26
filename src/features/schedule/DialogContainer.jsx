@@ -22,6 +22,7 @@ function DialogContainer() {
       isCompleted: false,
     };
     dispatch({ type: 'CREATE_SCHEDULE', payload: schedule });
+    dispatch({ type: 'CLOSE_MODAL' });
   };
 
   const handleClickCloseModal = () => {
