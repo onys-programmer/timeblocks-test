@@ -1,7 +1,7 @@
 import './Dialog.scss';
 
-function Dialog({ pickedDate }) {
-  const date = pickedDate.getDate();
+function Dialog({ dateObj }) {
+  const date = dateObj.getDate();
   return (
     <div className="Dialog">
       일정 추가를 위한 dialog입니다.
