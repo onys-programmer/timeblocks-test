@@ -3,7 +3,11 @@ import { Context } from '../../App';
 import DateBox from './DateBox';
 
 function DateBoxContainer({ dateObj }) {
-  const { state: { pickedDate, schedules }, dispatch } = useContext(Context);
+  const { state: {
+    schedules,
+    pickedDate,
+    referenceDate,
+  }, dispatch } = useContext(Context);
 
   const handleClickPickDate = () => {
     dispatch({ type: 'PICK_DATE', payload: dateObj });
@@ -19,12 +23,18 @@ function DateBoxContainer({ dateObj }) {
       ? true
       : false;
 
+  const isThisMonth =
+    referenceDate.getMonth() === dateObj.getMonth()
+      ? true
+      : false;
+
   return (
     <DateBox
       date={dateObj.getDate()}
       schedules={todaysSchedules}
       onClick={handleClickPickDate}
       isPicked={isPicked}
+      isThisMonth={isThisMonth}
     />
   );
 }
