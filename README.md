@@ -56,3 +56,10 @@ javascript or typescript
 ### 제출방법
 
 프로젝트 소스코드 전체를 압축하여 아래 이메일로 보내주시거나 또는 git repository를 생성하여 링크를 공유해주시면 됩니다.
+
+### Scripts
+의존하는 모듈 설치
+`npm i`
+
+개발 서버 실행
+`npm start`
